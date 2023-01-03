@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'header';
+@import 'secondSection';
+@import 'thirdSection';
+@import 'fourthSection';
+@import 'fifthSection';
+@import 'contactSection';
+@import 'footerSection';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 95%;
+    margin:0 auto;
+    @media (max-width:792px) {
+        width: 100%;
+    }
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+$baseWidth:calc(100%/12);
+@for $i from 1 through 12{
+    .col-#{$i}{
+        width:$baseWidth*$i;
+        @media (max-width:792px) {
+            width: 90%;
+        }
+    }
+}
